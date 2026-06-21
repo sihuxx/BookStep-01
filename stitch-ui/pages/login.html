@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BookStep - ë¡ê·¸ì¸</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Epilogue:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e6e2dd",
+                    "surface-tint": "#9b4428",
+                    "primary-fixed-dim": "#ffb59e",
+                    "on-primary-fixed": "#3a0b00",
+                    "secondary-fixed-dim": "#bacda6",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#f2dfd6",
+                    "primary-fixed": "#ffdbd0",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#3c4b2e",
+                    "on-background": "#231914",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#601a02",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#576848",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#fff1eb",
+                    "on-primary-fixed-variant": "#7c2d13",
+                    "surface-dim": "#e9d6ce",
+                    "outline-variant": "#dcc1b9",
+                    "on-tertiary-fixed-variant": "#484743",
+                    "tertiary": "#605e5b",
+                    "on-tertiary-container": "#33322f",
+                    "primary": "#9b4428",
+                    "inverse-primary": "#ffb59e",
+                    "on-surface-variant": "#55423d",
+                    "tertiary-fixed-dim": "#c9c6c1",
+                    "inverse-on-surface": "#ffede5",
+                    "primary-container": "#e67e5d",
+                    "inverse-surface": "#392e28",
+                    "surface": "#fff8f6",
+                    "surface-container-high": "#f8e4dc",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#f2dfd6",
+                    "secondary-container": "#d3e6be",
+                    "tertiary-container": "#9d9a96",
+                    "on-tertiary-fixed": "#1c1c19",
+                    "surface-bright": "#fff8f6",
+                    "on-primary": "#ffffff",
+                    "secondary": "#536344",
+                    "background": "#fff8f6",
+                    "outline": "#89726c",
+                    "on-error": "#ffffff",
+                    "surface-container": "#fdeae1",
+                    "secondary-fixed": "#d6e9c1",
+                    "on-surface": "#231914",
+                    "on-secondary-fixed": "#111f06"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "stack-md": "24px",
+                    "container-padding-desktop": "40px",
+                    "gutter": "16px",
+                    "stack-lg": "48px",
+                    "container-padding-mobile": "20px",
+                    "stack-sm": "12px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-md": ["Epilogue"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Epilogue"],
+                    "headline-lg-mobile": ["Epilogue"],
+                    "display-lg": ["Epilogue"],
+                    "headline-lg": ["Epilogue"],
+                    "body-lg": ["Epilogue"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            backdrop-filter: blur(24px);
+            background: rgba(255, 248, 246, 0.8);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 40px -10px rgba(74, 62, 56, 0.08);
+        }
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(155, 68, 40, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-padding-mobile md:px-container-padding-desktop h-16 glass-panel">
+<div class="text-headline-md font-headline-md font-bold text-primary">BookStep</div>
+<button class="text-on-surface-variant font-label-md hover:text-primary transition-colors">ëìë§</button>
+</header>
+<main class="flex-grow flex items-center justify-center px-container-padding-mobile py-stack-lg relative overflow-hidden">
+<!-- Atmospheric Background Elements -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px] -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-80 h-80 bg-secondary-container/30 rounded-full blur-[100px] -ml-40 -mb-40"></div>
+<!-- Login Container -->
+<div class="w-full max-w-[440px] z-10 animate-fade-in-up">
+<div class="text-center mb-stack-lg">
+<h1 class="text-display-lg font-display-lg text-on-background mb-unit">ë¤ì ë§ëì ë°ê°ìì</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">ë¹ì ì ì´ì¼ê¸°ë¥¼ ë¤ì ì´ì´ê°ì¸ì.</p>
+</div>
+<!-- Login Card -->
+<div class="glass-panel p-8 md:p-10 rounded-lg soft-shadow border border-surface-variant/50">
+<form class="space-y-stack-md" onsubmit="event.preventDefault();">
+<!-- Email Input -->
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant px-1 uppercase tracking-wider" for="email">ì´ë©ì¼ ì£¼ì</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-xl h-14 px-4 text-body-md placeholder:text-outline/60 focus:ring-2 focus:ring-primary/20 transition-all" id="email" name="email" placeholder="name@example.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-2">
+<div class="flex justify-between items-center px-1">
+<label class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider" for="password">ë¹ë°ë²í¸</label>
+<a class="text-label-sm font-label-sm text-primary hover:underline transition-all" href="#">ë¹ë°ë²í¸ë¥¼ ìì¼ì¨ëì?</a>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-xl h-14 px-4 text-body-md placeholder:text-outline/60 focus:ring-2 focus:ring-primary/20 transition-all" id="password" name="password" placeholder="â¢â¢â¢â¢â¢â¢â¢â¢" required="" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary text-on-primary font-label-md py-4 rounded-full shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4" type="submit">
+                        ë¡ê·¸ì¸íê¸°
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative my-stack-lg flex items-center">
+<div class="flex-grow border-t border-surface-variant"></div>
+<span class="px-4 text-label-sm font-label-sm text-outline uppercase tracking-widest text-center">ëë ë¤ì ê³ì ì¼ë¡ ê³ìíê¸°</span>
+<div class="flex-grow border-t border-surface-variant"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 bg-surface-container-low hover:bg-surface-container h-14 rounded-xl transition-all border border-transparent hover:border-surface-variant/30">
+<div class="w-6 h-6 flex items-center justify-center">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12.48 10.92v3.28h7.84c-.24 1.84-.9 3.34-2.03 4.5s-2.73 2.16-5.81 2.16c-3.77 0-6.94-3.04-6.94-6.81s3.17-6.81 6.94-6.81c1.97 0 3.51.77 4.71 1.91l2.31-2.31C17.51 2.97 15.24 2 12.48 2c-5.52 0-10 4.48-10 10s4.48 10 10 10c3 0 5.25-1 7-2.75 1.75-1.75 2.5-4.25 2.5-6.5 0-.5-.04-1-.12-1.5h-9.38z"></path>
+</svg>
+</div>
+<span class="text-label-md font-label-md">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 bg-surface-container-low hover:bg-surface-container h-14 rounded-xl transition-all border border-transparent hover:border-surface-variant/30">
+<div class="w-6 h-6 flex items-center justify-center">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.06.75 1.21-.03 2.36-.74 3.44-.69 1.44.07 2.5.61 3.14 1.55-2.86 1.72-2.39 5.48.47 6.62-.63 1.58-1.51 3.25-3.11 4.74zm-2.04-14.2c-.14-2.5 2.06-4.57 4.48-4.58.17 2.72-2.5 4.88-4.48 4.58z"></path>
+</svg>
+</div>
+<span class="text-label-md font-label-md">Apple</span>
+</button>
+</div>
+</div>
+<!-- Footer Link -->
+<p class="text-center mt-stack-md text-on-surface-variant font-label-md">
+                BookStepì´ ì²ìì´ì ê°ì? <a class="text-primary font-bold hover:underline" href="#">ê³ì  ë§ë¤ê¸°</a>
+</p>
+</div>
+</main>
+<script>
+        // Micro-interactions and subtle entrance animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.classList.add('scale-[1.01]');
+                });
+                input.addEventListener('blur', () => {
+                    input.parentElement.classList.remove('scale-[1.01]');
+                });
+            });
+
+            // Gentle parallax on atmospheric blobs
+            document.addEventListener('mousemove', (e) => {
+                const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+                const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+                
+                const blobs = document.querySelectorAll('.rounded-full.blur');
+                blobs.forEach((blob, index) => {
+                    const factor = index === 0 ? 1 : -1;
+                    blob.style.transform = `translate(${moveX * factor}px, ${moveY * factor}px)`;
+                });
+            });
+        });
+    </script>
+</body></html>

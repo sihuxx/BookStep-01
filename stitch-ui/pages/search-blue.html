@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Search - BookStep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&amp;family=Hanken+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-dot::after {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background-color: currentColor;
+            border-radius: 50%;
+            margin-top: 4px;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f8f9ff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "surface-container-low": "#eff4ff",
+                      "on-surface": "#0b1c30",
+                      "surface-variant": "#d3e4fe",
+                      "surface-dim": "#cbdbf5",
+                      "growth-green": "#DCFCE7",
+                      "primary-fixed": "#dbe1ff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "secondary": "#006c49",
+                      "on-tertiary-fixed": "#2a1700",
+                      "surface-container-highest": "#d3e4fe",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "bookmark-gold": "#FCD34D",
+                      "inverse-primary": "#b4c5ff",
+                      "primary": "#004ac6",
+                      "energy-blue": "#DBEAFE",
+                      "secondary-fixed-dim": "#4edea3",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#0b1c30",
+                      "on-primary-fixed": "#00174b",
+                      "tertiary-fixed": "#ffddb8",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#996100",
+                      "surface-bright": "#f8f9ff",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary-container": "#ffeedd",
+                      "on-surface-variant": "#434655",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-secondary-container": "#00714d",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "secondary-container": "#6cf8bb",
+                      "on-primary-container": "#eeefff",
+                      "tertiary": "#784b00",
+                      "surface-container": "#e5eeff",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed": "#002113",
+                      "on-primary": "#ffffff",
+                      "background": "#f8f9ff",
+                      "surface-tint": "#0053db",
+                      "outline": "#737686",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed": "#6ffbbe",
+                      "primary-container": "#2563eb",
+                      "inverse-surface": "#213145",
+                      "error": "#ba1a1a",
+                      "surface-cream": "#F8FAFC",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#dce9ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "lg": "24px",
+                      "base": "4px",
+                      "sm": "12px",
+                      "md": "16px",
+                      "xs": "8px",
+                      "xl": "32px",
+                      "container-margin": "20px"
+              },
+              "fontFamily": {
+                      "label-md": ["Hanken Grotesk"],
+                      "body-md": ["Hanken Grotesk"],
+                      "label-sm": ["Hanken Grotesk"],
+                      "headline-lg-mobile": ["Epilogue"],
+                      "headline-lg": ["Epilogue"],
+                      "title-lg": ["Hanken Grotesk"],
+                      "display-lg": ["Epilogue"],
+                      "headline-md": ["Epilogue"],
+                      "body-lg": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm shadow-primary/10">
+<div class="flex items-center justify-between px-container-margin py-xs w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined p-xs hover:bg-surface-container-high transition-colors active:scale-95 transition-transform text-primary">menu</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">BookStep</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary-fixed overflow-hidden border border-primary/10">
+<img class="w-full h-full object-cover" data-alt="A professional close-up studio portrait of a friendly high school student with a bright, welcoming expression. The lighting is soft and natural, emphasizing a modern light-mode aesthetic with clean skin tones and vibrant colors. The background is a soft-focus library with blue and white tones consistent with a vibrant educational brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj_JIYHOkpOq7gEjf4SorbDx4ypIXJXzA34IVmcJra5PzsuQlqik5XSHu6SbpNTygw_LOZ_GB1p4eRNP2lYWFCwfTjK9Sn3_e3N0QjxwRXdfArWaGDM98ilOgbepONe45Pf_dwVp73IU3HbDhAywlQXLmqWg3aFnkBl9uJKEiq4ewd0jI0ljBIOZXbvHmSjcZejMVEaPS0uVZCrNf-WoZk-GkIQNEzM70N5fjCExbODLLGZrIH99kWZAzGKxc6NhCunN0-yDwYkBM"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin pt-md">
+<!-- Search Bar Section -->
+<section class="mb-lg">
+<div class="relative flex items-center gap-xs">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-[56px] pl-12 pr-4 bg-surface-container-lowest border border-outline-variant rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-body-md text-on-surface shadow-sm shadow-primary/5" placeholder="Natural language search" type="text"/>
+</div>
+<button class="h-[56px] w-[56px] flex items-center justify-center bg-energy-blue text-primary rounded-xl hover:bg-primary hover:text-on-primary transition-all active:scale-95">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</section>
+<!-- Filter Chips Section -->
+<section class="mb-lg overflow-x-auto no-scrollbar flex items-center gap-sm pb-xs">
+<button class="whitespace-nowrap px-lg py-xs rounded-full bg-primary text-on-primary font-label-md transition-all shadow-md shadow-primary/20">Popular</button>
+<button class="whitespace-nowrap px-lg py-xs rounded-full bg-energy-blue text-primary border border-transparent hover:border-primary/20 font-label-md transition-all">Latest</button>
+<button class="whitespace-nowrap px-lg py-xs rounded-full bg-energy-blue text-primary border border-transparent hover:border-primary/20 font-label-md transition-all">Available Now</button>
+<button class="whitespace-nowrap px-lg py-xs rounded-full bg-energy-blue text-primary border border-transparent hover:border-primary/20 font-label-md transition-all">Fiction</button>
+<button class="whitespace-nowrap px-lg py-xs rounded-full bg-energy-blue text-primary border border-transparent hover:border-primary/20 font-label-md transition-all">Science</button>
+</section>
+<!-- Search Results / Suggested Keywords -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-md">
+<!-- Suggested Keywords (Asymmetric Bento-ish start) -->
+<div class="col-span-full mb-xs">
+<h2 class="font-title-lg text-title-lg mb-sm">Trending Tags</h2>
+<div class="flex flex-wrap gap-xs">
+<span class="px-md py-xs bg-surface-container rounded-lg text-on-surface-variant font-label-md cursor-pointer hover:bg-surface-variant transition-colors">#Adolescent</span>
+<span class="px-md py-xs bg-surface-container rounded-lg text-on-surface-variant font-label-md cursor-pointer hover:bg-surface-variant transition-colors">#Classic</span>
+<span class="px-md py-xs bg-surface-container rounded-lg text-on-surface-variant font-label-md cursor-pointer hover:bg-surface-variant transition-colors">#AwardWinners</span>
+<span class="px-md py-xs bg-surface-container rounded-lg text-on-surface-variant font-label-md cursor-pointer hover:bg-surface-variant transition-colors">#STEM</span>
+<span class="px-md py-xs bg-surface-container rounded-lg text-on-surface-variant font-label-md cursor-pointer hover:bg-surface-variant transition-colors">#Mystery</span>
+</div>
+</div>
+<!-- Book Card 1 -->
+<div class="bg-surface-container-lowest p-sm rounded-xl shadow-sm shadow-primary/5 hover:shadow-md hover:shadow-primary/10 hover:-translate-y-1 transition-all group">
+<div class="relative aspect-[2/3] rounded-xl overflow-hidden mb-sm shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A stylized and vibrant book cover design for a fantasy novel set in a floating city. The art style is modern digital illustration with a deep blue and energy-blue color palette, featuring glowing magical elements and clean typography. High contrast, sharp edges, and a cinematic lighting effect that feels premium and approachable for students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW9GEFfPEi8bdbN1yBH7eJ1G2uUfNvu0n2Bbc7nAy-WU3U_EQTaZ6z4-MHzoVN2XDwMn7o2-frB43TYWAq1QEtzQW0L7h97-xSlVo5F7sVWHQm_0q7svO_GJQpbcXKySnkyC_d1864obhOfeKDjaaU6CXqGCKWfty4Dpqh-am3SpxBCcDLDsmVJcALGgQra3H70G4cpc_1NYvk8X6mmm4WOsMF_MSHz1MkbGGnvHyqcAXxaVx5ha8i4wiEAJA8Re8fRDTQ8XQ18HM"/>
+<div class="absolute top-xs right-xs px-xs py-0.5 bg-growth-green text-on-secondary-fixed-variant rounded-md font-label-sm text-[10px] uppercase tracking-wider">Available</div>
+</div>
+<div class="px-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Echoes of the Sky</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Sarah Jenkins</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-bookmark-gold text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">4.8</span>
+</div>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="bg-surface-container-lowest p-sm rounded-xl shadow-sm shadow-primary/5 hover:shadow-md hover:shadow-primary/10 hover:-translate-y-1 transition-all group">
+<div class="relative aspect-[2/3] rounded-xl overflow-hidden mb-sm shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A minimalist and sophisticated book cover for a non-fiction book about psychology and focus. The cover features a clean white background with a single, elegant geometric shape in primary blue. The mood is calm, intellectual, and modern, using premium sans-serif typography. Soft shadows and a high-quality paper texture appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXhFzuVSkbq2swVTRq_QTRWcnBQWjFvrGrrk1oMzyKhkr3WtZ73sv2-qfTGkORmBZdEussvmysCbKBqBzGoY_djgsq69fLAKvfFx1XrKHNjsWUpaHdQz_8JS2J1Y94TKSj4BVrjPrV2MXw1LGYSyExzqAHzKKcvp7PncfY1hR2ZpEjPlJ_4hCYq0fGg_Z3Bb-AP4sOS2Yxaah7iP74cXhemErKWM3acZ4zfjaYG4Y8U9LwxMuB93zYd5WfKdtSEZ0DGroVtsMbMzE"/>
+<div class="absolute top-xs right-xs px-xs py-0.5 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-md font-label-sm text-[10px] uppercase tracking-wider">Reserved</div>
+</div>
+<div class="px-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface line-clamp-1 group-hover:text-primary transition-colors">The Focused Mind</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Dr. Marcus Wei</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-bookmark-gold text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">4.5</span>
+</div>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="bg-surface-container-lowest p-sm rounded-xl shadow-sm shadow-primary/5 hover:shadow-md hover:shadow-primary/10 hover:-translate-y-1 transition-all group">
+<div class="relative aspect-[2/3] rounded-xl overflow-hidden mb-sm shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A bold and colorful book cover for a YA graphic novel. The art style is energetic comic book illustration with vibrant pops of green and purple. The characters look diverse and modern, engaged in a science experiment. The lighting is bright and cheerful, evoking a sense of discovery and growth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTdC4o2JWM2WgIDAxgNIZJYpQzNne_7J_pVQf7jirBzehMW3ttD_dYXKJx6aYc_fUAraxmtiQJe3GckfQpFAA8janqbrL7q2OycwxOP23MyxW_TWdAgcsmTwlQGNMKjTjt-H8xJslK5TQmg7mEqYGltei7Yq6qts15ELqvKgjouyY3Jdrqot8J2KP7IZS6np9Pmq34pnnw-Z8ocj7h5leM_uYYPtIo73GcIcYefc8XHf6xci2rsa3W722fPGubcGV7Z-18a34YJcg"/>
+<div class="absolute top-xs right-xs px-xs py-0.5 bg-growth-green text-on-secondary-fixed-variant rounded-md font-label-sm text-[10px] uppercase tracking-wider">Available</div>
+</div>
+<div class="px-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface line-clamp-1 group-hover:text-primary transition-colors">Lab Rat Tales</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Maya Rodriguez</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-bookmark-gold text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">4.9</span>
+</div>
+</div>
+</div>
+<!-- Book Card 4 -->
+<div class="bg-surface-container-lowest p-sm rounded-xl shadow-sm shadow-primary/5 hover:shadow-md hover:shadow-primary/10 hover:-translate-y-1 transition-all group">
+<div class="relative aspect-[2/3] rounded-xl overflow-hidden mb-sm shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A classic literary fiction book cover with a modern twist. The design uses a sophisticated palette of deep navy and gold, with a central abstract illustration of an open gate. The typography is elegant and timeless. High-end, premium aesthetic that feels like a prestigious award winner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR_GNYYmhptVDaRbv-ZzSJGYM7fH3n3MC7SAm1c1Jl0yLh5bH0CEQ5kuLWoVwn-Ih2BnV9mjiorJB0MwimxWdr3Eflo9dZaAT4h4xfBpeMpq_qKKJ35H4kGYL_ZZyTctv_MpGwk4cOZwCdzC8YRNcDamydEcFmdKVsWKCVXpeI2gSMURQEdSaMTJr8yb9rYV-tx1_JxMFok1NwgL0SGcExYKR-C_HLkZiuHORTNImVXLSoiR8Jjtr72T7BZaTHtN9RsCk-KzOsBfI"/>
+<div class="absolute top-xs right-xs px-xs py-0.5 bg-growth-green text-on-secondary-fixed-variant rounded-md font-label-sm text-[10px] uppercase tracking-wider">Available</div>
+</div>
+<div class="px-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface line-clamp-1 group-hover:text-primary transition-colors">The Open Gate</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Thomas Thorne</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-bookmark-gold text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">4.7</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Empty State Mock (Hidden by default, shown for demonstration) -->
+<section class="hidden flex flex-col items-center justify-center py-xl text-center" id="empty-state">
+<div class="w-48 h-48 mb-md">
+
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">No books found</h2>
+<p class="font-body-md text-on-surface-variant max-w-xs mb-lg">Try searching for something else or browse our suggested keywords.</p>
+<button class="bg-primary text-on-primary px-xl py-md rounded-xl font-label-md shadow-lg shadow-primary/20 active:scale-95 transition-all">Clear Search</button>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest border-t border-outline-variant shadow-[0_-4px_12px_rgba(37,99,235,0.08)]">
+<div class="flex justify-around items-center h-16 px-4 pb-safe w-full">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary relative after:content-[''] after:w-1 after:h-1 after:bg-primary after:rounded-full after:mt-1 transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="font-label-sm text-label-sm">Bookmarks</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</div>
+</nav>
+<script>
+        // Simple search interaction mock
+        const searchInput = document.querySelector('input[type="text"]');
+        const emptyState = document.getElementById('empty-state');
+        const resultsGrid = document.querySelector('section.grid');
+
+        searchInput.addEventListener('input', (e) => {
+            if (e.target.value.toLowerCase() === 'empty') {
+                resultsGrid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+            } else {
+                resultsGrid.classList.remove('hidden');
+                emptyState.classList.add('hidden');
+            }
+        });
+
+        // Add active click effect to chips
+        const chips = document.querySelectorAll('button.whitespace-nowrap');
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary', 'shadow-md', 'shadow-primary/20');
+                    c.classList.add('bg-energy-blue', 'text-primary');
+                });
+                chip.classList.add('bg-primary', 'text-on-primary', 'shadow-md', 'shadow-primary/20');
+                chip.classList.remove('bg-energy-blue', 'text-primary');
+            });
+        });
+    </script>
+</body></html>

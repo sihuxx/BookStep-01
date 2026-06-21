@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Book Detail - BookStep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-container-low": "#eff4ff",
+                    "on-surface": "#0b1c30",
+                    "surface-variant": "#d3e4fe",
+                    "surface-dim": "#cbdbf5",
+                    "growth-green": "#DCFCE7",
+                    "primary-fixed": "#dbe1ff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "secondary": "#006c49",
+                    "on-tertiary-fixed": "#2a1700",
+                    "surface-container-highest": "#d3e4fe",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "bookmark-gold": "#FCD34D",
+                    "inverse-primary": "#b4c5ff",
+                    "primary": "#004ac6",
+                    "energy-blue": "#DBEAFE",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "on-primary-fixed": "#00174b",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#996100",
+                    "surface-bright": "#f8f9ff",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-container": "#ffeedd",
+                    "on-surface-variant": "#434655",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-secondary-container": "#00714d",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "secondary-container": "#6cf8bb",
+                    "on-primary-container": "#eeefff",
+                    "tertiary": "#784b00",
+                    "surface-container": "#e5eeff",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#002113",
+                    "on-primary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "surface-tint": "#0053db",
+                    "outline": "#737686",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#6ffbbe",
+                    "primary-container": "#2563eb",
+                    "inverse-surface": "#213145",
+                    "error": "#ba1a1a",
+                    "surface-cream": "#F8FAFC",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#dce9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "sm": "12px",
+                    "md": "16px",
+                    "xs": "8px",
+                    "xl": "32px",
+                    "container-margin": "20px"
+            },
+            "fontFamily": {
+                    "label-md": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Epilogue"],
+                    "headline-lg": ["Epilogue"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Epilogue"],
+                    "headline-md": ["Epilogue"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .book-shadow {
+            box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.15);
+        }
+        .scrolling-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .scrolling-wrapper {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .back-button-blur {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased pb-32">
+<!-- Hero Section: Cover & Back Button -->
+<header class="relative w-full aspect-[3/4] md:aspect-[16/7] overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-black/20 z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="A high-quality, professional photograph of a vibrant modern book cover featuring abstract blue and green geometric patterns. The lighting is soft and natural, emphasizing the texture of the high-grade matte paper. The background is a clean, minimalist studio setting with soft primary blue lighting accents, creating a modern, friendly and academic atmosphere suitable for a middle school library application." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDg47-7WO5UDDXwniDLlydjOHOU6iWnqzF7zuHXjF0DKtt48OMGo1TAX1Jlchy1LUxnVrn-L9xnBvzpcQYfUb5wyRyjK_OULUoFyF7kKALG9YwA3ugRD4EOxbyB3MTKsxGcQMPszEb-gibwYw5owx02f5hxCDgCJJ0gfOz8EvKLynQCir37TbZmqiiKV3oD4Hsn5fNSzKjuBR3TbRMCkvIiOts2VbKDravvrtOGZpJIHdvD3PLeH91UptnQc7bPDPf9XfUO0XaWEVg')"></div>
+<!-- Back Button Overlay -->
+<nav class="absolute top-0 left-0 w-full p-container-margin z-20 flex justify-between items-start">
+<button class="w-12 h-12 flex items-center justify-center rounded-full back-button-blur text-primary active:scale-95 transition-all shadow-sm" onclick="window.history.back()">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full back-button-blur text-primary active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined">share</span>
+</button>
+</nav>
+</header>
+<!-- Main Content Container -->
+<main class="relative -mt-16 z-30 px-container-margin max-w-7xl mx-auto">
+<!-- Identity Card -->
+<section class="bg-surface-container-lowest rounded-[24px] p-lg shadow-[0_4px_24px_rgba(37,99,235,0.06)] border border-white/50">
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between items-start">
+<span class="bg-growth-green text-on-secondary-fixed-variant px-sm py-1 rounded-full font-label-sm text-label-sm">
+                        Adventure â¢ Sci-Fi
+                    </span>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md">4.8</span>
+</div>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-xs">The Infinite Step</h1>
+<p class="font-title-lg text-title-lg text-on-surface-variant">by Sarah J. Sterling</p>
+<p class="font-label-md text-label-md text-outline mt-xs">Publisher: Horizon House (2023)</p>
+</div>
+<!-- Stats/Chips -->
+<div class="grid grid-cols-3 gap-md mt-lg pt-lg border-t border-surface-variant">
+<div class="text-center">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Pages</p>
+<p class="font-title-lg text-title-lg text-primary mt-1">342</p>
+</div>
+<div class="text-center border-x border-surface-variant">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Language</p>
+<p class="font-title-lg text-title-lg text-primary mt-1">EN</p>
+</div>
+<div class="text-center">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Format</p>
+<p class="font-title-lg text-title-lg text-primary mt-1">Hard</p>
+</div>
+</div>
+</section>
+<!-- Synopsis -->
+<section class="mt-xl">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Storyline</h2>
+<div class="prose prose-blue">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    In a world where every step you take adds to a global energy grid, young Leo finds himself at the center of a mysterious power outage. "The Infinite Step" follows his journey as he discovers a hidden society that lives off the grid, challenging everything he was taught about progress and sustainability.
+                </p>
+<button class="text-primary font-label-md text-label-md mt-sm flex items-center gap-1 hover:underline">
+                    Read more <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Similar Recommendations -->
+<section class="mt-xl mb-xl">
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Similar Books</h2>
+<button class="text-primary font-label-md text-label-md hover:underline transition-all">View All</button>
+</div>
+<div class="scrolling-wrapper flex overflow-x-auto gap-lg pb-4 -mx-container-margin px-container-margin">
+<!-- Book Card 1 -->
+<div class="flex-none w-40 group">
+<div class="aspect-[2/3] rounded-xl overflow-hidden book-shadow mb-sm relative interaction-lift">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A book cover for a young adult novel titled 'Neon Trails' featuring a futuristic city scape with glowing blue and purple trails. The style is modern digital art with high contrast and vibrant energy pops of color, reflecting a tech-focused growth narrative for teenagers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDw6Uwll5mcjiDx1yjtsDv8bFdd6B2_KYLemHIv6B6DBF89BJSXwxMhdasLBaP5yjaMo2GSsGR1uRwHFOL_4bnLnFe6OB9D-SsTlkjThp_m233YlctaLQk3zLpD1Ivpani-EKKGF562cnAH-6dIlM2lqfkiwOtbvENKAkdDcIb-MzC9NN5lci9Pzcq2pzMud7vrh5Yw8lyKmxkQA9Jdwsry2Wew7NxYY8mQB8BuiMMrOqORZmvgq0_cBhpi9r7L47tQIVfEU3Wr94"/>
+<div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+</div>
+<h3 class="font-title-lg text-body-md truncate text-on-surface">Neon Trails</h3>
+<p class="font-label-md text-label-sm text-outline">Marcus Vane</p>
+</div>
+<!-- Book Card 2 -->
+<div class="flex-none w-40 group">
+<div class="aspect-[2/3] rounded-xl overflow-hidden book-shadow mb-sm interaction-lift">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A minimalist book cover design for 'The Last Eco' showing a single green sprout growing from a metallic structure. The palette consists of energy blue and growth green against a soft grey background, conveying a sense of approachable sophistication and hope." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhgtNlpPkPdxik_oiwieQIqMN69vjWKiLxLf_9R-f3WZlnTigFsSAZI9mDfi3k-3KSZomvrHx7pqb9JuSILjw7FJIIr_DxyAMEgxqw0bfJjX3640wnvcydkD3omd9M9kX5FUa16EPr4sMPjquKaB6DpTtUq0TZBoAzbjZyaKnHcJTuqKS5AsknX0a12e3FIht_CqV9CDPqygPmSye9g8BODFSCjGcEjwkHX9d4jg-hVOt_lTdp8H30Ba2tkSBDTLlcVVlziEy-L60"/>
+</div>
+<h3 class="font-title-lg text-body-md truncate text-on-surface">The Last Eco</h3>
+<p class="font-label-md text-label-sm text-outline">Elena Thorne</p>
+</div>
+<!-- Book Card 3 -->
+<div class="flex-none w-40 group">
+<div class="aspect-[2/3] rounded-xl overflow-hidden book-shadow mb-sm interaction-lift">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vibrant book cover for 'Sky High Academics' featuring an upward trajectory of paper planes flying into a bright blue sky. The visual style is corporate modern yet friendly, using generous white space and bold primary blue typography to appeal to high school students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX2_oINCxT-ZSt-kOhvc24PAVUtB60bGTJrxp1btPS0_TMLtwItgygS4rH6Ia3cPvz-0o9isEZLFlOmgKJ0JW-6CL7BIRwUOJdO-SLXGzAguUd__GXyeNGJXpw4JU3V0ZOgMwWPo1iasmzs0XoVPN9E439FBxrOJI-NK1ZbFCuHuvhkn2lm9TQExv3Nv7625vb83kmMGjbxr1SyoJ2rTgGxjHSTlTa8QK4Jj2vNlQ1X0KWQ68aYKVmJfoVHwTMkBa0tyXaRHkd5tE"/>
+</div>
+<h3 class="font-title-lg text-body-md truncate text-on-surface">Sky High</h3>
+<p class="font-label-md text-label-sm text-outline">P. Q. West</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Loan Action Bar (Sticky Mobile) -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-t border-surface-variant p-container-margin md:px-xl pb-safe-offset-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-lg">
+<div class="hidden sm:block">
+<p class="font-label-sm text-label-sm text-outline uppercase">Availability</p>
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 bg-on-secondary-container rounded-full animate-pulse"></span>
+<p class="font-title-lg text-title-lg text-on-secondary-container">3 copies left</p>
+</div>
+</div>
+<div class="flex-1 flex gap-md items-center">
+<button class="w-14 h-14 flex items-center justify-center border-2 border-primary text-primary rounded-xl hover:bg-energy-blue transition-colors active:scale-95">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+<button class="flex-1 h-14 bg-primary text-white rounded-xl font-headline-md text-headline-md flex items-center justify-center gap-sm shadow-lg shadow-primary/20 hover:bg-on-primary-fixed-variant active:scale-95 transition-all">
+                    Loan Now
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Mobile Availability Text (Floating small) -->
+<div class="sm:hidden text-center mt-xs">
+<p class="font-label-sm text-label-sm text-on-secondary-container bg-growth-green inline-block px-md py-1 rounded-full">
+                3 books currently available for loan
+            </p>
+</div>
+</div>
+<!-- Success Modal Interaction (Hidden by default) -->
+<div class="fixed inset-0 z-[60] hidden items-center justify-center p-xl" id="loan-success">
+<div class="absolute inset-0 bg-on-surface/40 backdrop-blur-sm"></div>
+<div class="relative bg-surface-container-lowest rounded-[32px] p-xl w-full max-w-sm text-center shadow-2xl border border-white">
+<div class="w-20 h-20 bg-growth-green text-on-secondary-fixed-variant rounded-full flex items-center justify-center mx-auto mb-lg">
+<span class="material-symbols-outlined text-[40px]">check_circle</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Success!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl">"The Infinite Step" has been reserved. You have 24 hours to pick it up.</p>
+<button class="w-full h-14 bg-primary text-white rounded-xl font-headline-md text-headline-md" onclick="closeModal()">Great!</button>
+</div>
+</div>
+<script>
+        // Simple Interaction logic
+        const loanBtn = document.querySelector('button.bg-primary');
+        const modal = document.getElementById('loan-success');
+
+        loanBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // Mocking a physical book "lift" or depth change
+            loanBtn.classList.remove('shadow-lg');
+            loanBtn.classList.add('shadow-2xl');
+        });
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Lift effect on scroll for the identity card
+        window.addEventListener('scroll', () => {
+            const card = document.querySelector('section.bg-surface-container-lowest');
+            const scrolled = window.scrollY > 100;
+            if (scrolled) {
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'transform 0.3s ease';
+            } else {
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>ëì ìì¸ ì ë³´ - BookStep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-fixed-dim": "#ffb690",
+                "error": "#ba1a1a",
+                "on-background": "#1c1c19",
+                "primary": "#9d4300",
+                "on-error-container": "#93000a",
+                "on-tertiary": "#ffffff",
+                "secondary": "#805533",
+                "outline": "#8c7164",
+                "surface-container-lowest": "#ffffff",
+                "on-error": "#ffffff",
+                "on-primary-fixed-variant": "#783200",
+                "on-tertiary-fixed": "#221b00",
+                "tertiary": "#6e5e0d",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed": "#301400",
+                "on-secondary-container": "#794e2e",
+                "tertiary-fixed-dim": "#dcc66e",
+                "surface-bright": "#fcf9f4",
+                "on-primary-container": "#582200",
+                "surface": "#fcf9f4",
+                "on-tertiary-container": "#4b3f00",
+                "surface-container-low": "#f6f3ee",
+                "surface-container-highest": "#e5e2dd",
+                "secondary-container": "#fdc39a",
+                "error-container": "#ffdad6",
+                "inverse-primary": "#ffb690",
+                "on-primary-fixed": "#341100",
+                "surface-tint": "#9d4300",
+                "on-surface-variant": "#584237",
+                "outline-variant": "#e0c0b1",
+                "surface-container": "#f0ede9",
+                "inverse-on-surface": "#f3f0eb",
+                "primary-container": "#f97316",
+                "on-tertiary-fixed-variant": "#534600",
+                "surface-dim": "#dcdad5",
+                "primary-fixed": "#ffdbca",
+                "on-secondary-fixed-variant": "#653d1e",
+                "on-primary": "#ffffff",
+                "tertiary-fixed": "#f9e287",
+                "secondary-fixed": "#ffdcc5",
+                "surface-container-high": "#ebe8e3",
+                "secondary-fixed-dim": "#f4bb92",
+                "on-surface": "#1c1c19",
+                "background": "#fcf9f4",
+                "surface-variant": "#e5e2dd",
+                "inverse-surface": "#31302d",
+                "tertiary-container": "#bfab56"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "xs": "4px",
+                "md": "24px",
+                "sm": "12px",
+                "margin-desktop": "64px",
+                "lg": "48px",
+                "base": "8px",
+                "xl": "80px",
+                "margin-mobile": "16px",
+                "gutter": "20px"
+            },
+            "fontFamily": {
+                "body-md": ["Noto Sans KR"],
+                "headline-lg-mobile": ["Epilogue"],
+                "headline-xl": ["Epilogue"],
+                "body-lg": ["Noto Sans KR"],
+                "headline-lg": ["Epilogue"],
+                "label-md": ["Epilogue"],
+                "caption": ["Noto Sans KR"]
+            },
+            "fontSize": {
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .book-shadow {
+            box-shadow: 0 10px 30px -5px rgba(157, 67, 0, 0.15);
+        }
+        .scrolling-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .scrolling-wrapper {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .back-button-blur {
+            backdrop-filter: blur(8px);
+            background-color: rgba(252, 249, 244, 0.6);
+        }
+        body {
+            min-height: max(884px, 100dvh);
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased pb-32">
+<!-- Hero Section: Cover & Back Button -->
+<header class="relative w-full aspect-[3/4] md:aspect-[16/7] overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/20 z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDg47-7WO5UDDXwniDLlydjOHOU6iWnqzF7zuHXjF0DKtt48OMGo1TAX1Jlchy1LUxnVrn-L9xnBvzpcQYfUb5wyRyjK_OULUoFyF7kKALG9YwA3ugRD4EOxbyB3MTKsxGcQMPszEb-gibwYw5owx02f5hxCDgCJJ0gfOz8EvKLynQCir37TbZmqiiKV3oD4Hsn5fNSzKjuBR3TbRMCkvIiOts2VbKDravvrtOGZpJIHdvD3PLeH91UptnQc7bPDPf9XfUO0XaWEVg')"></div>
+<!-- Back Button Overlay -->
+<nav class="absolute top-0 left-0 w-full p-margin-mobile z-20 flex justify-between items-start">
+<button class="w-12 h-12 flex items-center justify-center rounded-full back-button-blur text-primary active:scale-95 transition-all shadow-sm" onclick="window.history.back()">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full back-button-blur text-primary active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined">share</span>
+</button>
+</nav>
+</header>
+<!-- Main Content Container -->
+<main class="relative -mt-16 z-30 px-margin-mobile max-w-7xl mx-auto">
+<!-- Identity Card -->
+<section class="bg-surface-container-lowest rounded-[24px] p-md shadow-[0_4px_24px_rgba(157,67,0,0.08)] border border-outline-variant">
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between items-start">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-sm py-1 rounded-full font-label-md text-[12px] font-bold">
+                        ì´ëë²¤ì² â¢ SF
+                    </span>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-label-md">4.8</span>
+</div>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-xs">The Infinite Step</h1>
+<p class="text-body-lg text-on-surface-variant">ì ì: Sarah J. Sterling</p>
+<p class="text-label-md text-outline mt-xs">ì¶íì¬: Horizon House (2023)</p>
+</div>
+<!-- Stats/Chips -->
+<div class="grid grid-cols-3 gap-md mt-lg pt-lg border-t border-surface-variant">
+<div class="text-center">
+<p class="text-[12px] text-outline uppercase font-bold tracking-wider">íì´ì§</p>
+<p class="text-body-lg font-bold text-primary mt-1">342</p>
+</div>
+<div class="text-center border-x border-surface-variant">
+<p class="text-[12px] text-outline uppercase font-bold tracking-wider">ì¸ì´</p>
+<p class="text-body-lg font-bold text-primary mt-1">íêµ­ì´</p>
+</div>
+<div class="text-center">
+<p class="text-[12px] text-outline uppercase font-bold tracking-wider">íì</p>
+<p class="text-body-lg font-bold text-primary mt-1">ìì¥ë³¸</p>
+</div>
+</div>
+</section>
+<!-- Synopsis -->
+<section class="mt-xl">
+<h2 class="text-headline-lg-mobile font-bold text-on-surface mb-md">ì¤ê±°ë¦¬</h2>
+<div class="prose prose-orange">
+<p class="text-body-md text-on-surface-variant leading-relaxed">
+                    ë¹ì ì´ ë´ëë ëª¨ë  ë°ê±¸ìì´ ê¸ë¡ë² ìëì§ ê·¸ë¦¬ëì ì ë ¥ì ê³µê¸íë ì¸ììì, ìë ë ì¤ë ìë¬¸ì ì ì  ì¬ê±´ì ì¤ì¬ì ìê² ë©ëë¤. "The Infinite Step"ì ìëì§ ìì¤í ë°ìì ì´ìê°ë ë¹ë° ì¬íë¥¼ ë°ê²¬íê³ , ê·¸ëì ë°°ìì¨ ë°ì ê³¼ ì§ì ê°ë¥ì±ì ëí ììì ëì íë ê·¸ì ì¬ì ì ë¤ë£¹ëë¤.
+                </p>
+<button class="text-primary font-bold text-label-md mt-sm flex items-center gap-1 hover:underline">
+                    ë ë³´ê¸° <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Similar Recommendations -->
+<section class="mt-xl mb-xl">
+<div class="flex items-center justify-between mb-md">
+<h2 class="text-headline-lg-mobile font-bold text-on-surface">ë¹ì·í ëì</h2>
+<button class="text-primary font-bold text-label-md hover:underline transition-all">ì ì²´ë³´ê¸°</button>
+</div>
+<div class="scrolling-wrapper flex overflow-x-auto gap-lg pb-4 -mx-margin-mobile px-margin-mobile">
+<!-- Book Card 1 -->
+<div class="flex-none w-40 group">
+<div class="aspect-[2/3] rounded-xl overflow-hidden book-shadow mb-sm relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Neon Trails book cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDw6Uwll5mcjiDx1yjtsDv8bFdd6B2_KYLemHIv6B6DBF89BJSXwxMhdasLBaP5yjaMo2GSsGR1uRwHFOL_4bnLnFe6OB9D-SsTlkjThp_m233YlctaLQk3zLpD1Ivpani-EKKGF562cnAH-6dIlM2lqfkiwOtbvENKAkdDcIb-MzC9NN5lci9Pzcq2pzMud7vrh5Yw8lyKmxkQA9Jdwsry2Wew7NxYY8mQB8BuiMMrOqORZmvgq0_cBhpi9r7L47tQIVfEU3Wr94"/>
+<div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+</div>
+<h3 class="font-bold text-body-md truncate text-on-surface">Neon Trails</h3>
+<p class="text-label-md text-outline">Marcus Vane</p>
+</div>
+<!-- Book Card 2 -->
+<div class="flex-none w-40 group">
+<div class="aspect-[2/3] rounded-xl overflow-hidden book-shadow mb-sm">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="The Last Eco book cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhgtNlpPkPdxik_oiwieQIqMN69vjWKiLxLf_9R-f3WZlnTigFsSAZI9mDfi3k-3KSZomvrHx7pqb9JuSILjw7FJIIr_DxyAMEgxqw0bfJjX3640wnvcydkD3omd9M9kX5FUa16EPr4sMPjquKaB6DpTtUq0TZBoAzbjZyaKnHcJTuqKS5AsknX0a12e3FIht_CqV9CDPqygPmSye9g8BODFSCjGcEjwkHX9d4jg-hVOt_lTdp8H30Ba2tkSBDTLlcVVlziEy-L60"/>
+</div>
+<h3 class="font-bold text-body-md truncate text-on-surface">The Last Eco</h3>
+<p class="text-label-md text-outline">Elena Thorne</p>
+</div>
+<!-- Book Card 3 -->
+<div class="flex-none w-40 group">
+<div class="aspect-[2/3] rounded-xl overflow-hidden book-shadow mb-sm">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Sky High Academics book cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX2_oINCxT-ZSt-kOhvc24PAVUtB60bGTJrxp1btPS0_TMLtwItgygS4rH6Ia3cPvz-0o9isEZLFlOmgKJ0JW-6CL7BIRwUOJdO-SLXGzAguUd__GXyeNGJXpw4JU3V0ZOgMwWPo1iasmzs0XoVPN9E439FBxrOJI-NK1ZbFCuHuvhkn2lm9TQExv3Nv7625vb83kmMGjbxr1SyoJ2rTgGxjHSTlTa8QK4Jj2vNlQ1X0KWQ68aYKVmJfoVHwTMkBa0tyXaRHkd5tE"/>
+</div>
+<h3 class="font-bold text-body-md truncate text-on-surface">Sky High</h3>
+<p class="text-label-md text-outline">P. Q. West</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Loan Action Bar (Sticky Mobile) -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-t border-outline-variant p-margin-mobile pb-safe-offset-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-md">
+<div class="flex-1 flex gap-md items-center">
+<button class="w-14 h-14 flex items-center justify-center border-2 border-primary text-primary rounded-xl hover:bg-primary-fixed transition-colors active:scale-95">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+<button class="flex-1 h-14 bg-primary text-on-primary rounded-xl font-bold text-body-lg flex items-center justify-center gap-sm shadow-lg shadow-primary/20 hover:bg-on-primary-fixed-variant active:scale-95 transition-all">
+                    ì§ê¸ ëì¶íê¸°
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Mobile Availability Text -->
+<div class="text-center mt-xs">
+<p class="text-[12px] font-bold text-on-secondary-container bg-secondary-container inline-block px-md py-1 rounded-full">
+                íì¬ 3ê¶ì ëì¶ì´ ê°ë¥í©ëë¤
+            </p>
+</div>
+</div>
+<!-- Success Modal Interaction -->
+<div class="fixed inset-0 z-[60] hidden items-center justify-center p-xl" id="loan-success">
+<div class="absolute inset-0 bg-on-surface/40 backdrop-blur-sm"></div>
+<div class="relative bg-surface-container-lowest rounded-[32px] p-xl w-full max-w-sm text-center shadow-2xl border border-outline-variant">
+<div class="w-20 h-20 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center mx-auto mb-lg">
+<span class="material-symbols-outlined text-[40px]">check_circle</span>
+</div>
+<h2 class="text-headline-lg-mobile font-bold text-on-surface mb-xs">ëì¶ ì±ê³µ!</h2>
+<p class="text-body-md text-on-surface-variant mb-xl">"The Infinite Step" ëìê° ìì½ëììµëë¤. 24ìê° ì´ë´ì ë°©ë¬¸íì¬ ìë ¹í´ ì£¼ì¸ì.</p>
+<button class="w-full h-14 bg-primary text-on-primary rounded-xl font-bold text-body-lg" onclick="closeModal()">íì¸</button>
+</div>
+</div>
+<script>
+        const loanBtn = document.querySelector('button.bg-primary');
+        const modal = document.getElementById('loan-success');
+
+        loanBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            loanBtn.classList.remove('shadow-lg');
+            loanBtn.classList.add('shadow-2xl');
+        });
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        window.addEventListener('scroll', () => {
+            const card = document.querySelector('section.bg-surface-container-lowest');
+            if (card) {
+                const scrolled = window.scrollY > 100;
+                if (scrolled) {
+                    card.style.transform = 'translateY(-4px)';
+                    card.style.transition = 'transform 0.3s ease';
+                } else {
+                    card.style.transform = 'translateY(0)';
+                }
+            }
+        });
+    </script>
+</body></html>

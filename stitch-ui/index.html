@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookStep Stitch UI 미리보기</title>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #004ac6;
+      --surface: #f8f9ff;
+      --on-surface: #0b1c30;
+      --outline: #c3c6d7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Hanken Grotesk", "Noto Sans KR", sans-serif;
+      background: var(--surface);
+      color: var(--on-surface);
+      line-height: 1.5;
+    }
+    header {
+      padding: 2rem 1.25rem 1rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-family: Epilogue, sans-serif;
+      font-size: 1.75rem;
+      margin: 0 0 0.5rem;
+    }
+    .meta { color: #434655; font-size: 0.95rem; }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.25rem 3rem;
+      display: grid;
+      gap: 1rem;
+    }
+    section {
+      background: #fff;
+      border: 1px solid var(--outline);
+      border-radius: 1rem;
+      padding: 1.25rem;
+    }
+    section h2 {
+      font-family: Epilogue, sans-serif;
+      font-size: 1.1rem;
+      margin: 0 0 0.75rem;
+    }
+    ul { margin: 0; padding-left: 1.1rem; }
+    li { margin: 0.35rem 0; }
+    a { color: var(--primary); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: #dbe1ff;
+      color: #004ac6;
+      margin-left: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>StepUp BookStep 도서관 앱 UI</h1>
+    <p class="meta">
+      Google Stitch 프로젝트에서 내보낸 HTML 화면입니다.
+      PRD 흐름: 회원가입 → 로그인 → 홈 → 검색 → 상세 → 북마크/마이페이지
+    </p>
+  </header>
+  <main>
+    <section>
+      <h2>권장 화면 세트 (Growth Blue 테마)</h2>
+      <ul>
+        <li><a href="pages/01-signup-genre.html">회원가입 및 장르 선택</a></li>
+        <li><a href="pages/02-login.html">로그인</a> <span class="tag">Warm Apple 변형</span></li>
+        <li><a href="pages/03-home.html">메인 홈 (도서 추천)</a></li>
+        <li><a href="pages/04-search.html">도서 검색 및 필터</a></li>
+        <li><a href="pages/05-book-detail.html">도서 상세 및 대출</a></li>
+        <li><a href="pages/06-bookmark-mypage.html">북마크 및 마이페이지</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>감성 테마 (Warm Apple / Orange)</h2>
+      <ul>
+        <li><a href="signup-genre.html">회원가입 및 장르 선택 (감성 테마)</a></li>
+        <li><a href="home.html">메인 홈 (감성 테마)</a></li>
+        <li><a href="search.html">도서 검색 및 필터 (감성 테마)</a></li>
+        <li><a href="book-detail.html">도서 상세 및 대출 (감성 테마)</a></li>
+        <li><a href="bookmark-mypage.html">북마크 및 마이페이지 (감성 테마)</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>참고</h2>
+      <ul>
+        <li><a href="screens-manifest.json">screens-manifest.json</a> — Stitch 화면 메타데이터</li>
+        <li><a href="../docs/BookStep_PRD.md">BookStep PRD</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

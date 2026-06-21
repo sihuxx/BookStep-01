@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BookStep - ëìë¡ ììíë ì±ì¥</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Noto+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "primary-fixed-dim": "#ffb690",
+                "error": "#ba1a1a",
+                "on-background": "#1c1c19",
+                "primary": "#9d4300",
+                "on-error-container": "#93000a",
+                "on-tertiary": "#ffffff",
+                "secondary": "#805533",
+                "outline": "#8c7164",
+                "surface-container-lowest": "#ffffff",
+                "on-error": "#ffffff",
+                "on-primary-fixed-variant": "#783200",
+                "on-tertiary-fixed": "#221b00",
+                "tertiary": "#6e5e0d",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed": "#301400",
+                "on-secondary-container": "#794e2e",
+                "tertiary-fixed-dim": "#dcc66e",
+                "surface-bright": "#fcf9f4",
+                "on-primary-container": "#582200",
+                "surface": "#fcf9f4",
+                "on-tertiary-container": "#4b3f00",
+                "surface-container-low": "#f6f3ee",
+                "surface-container-highest": "#e5e2dd",
+                "secondary-container": "#fdc39a",
+                "error-container": "#ffdad6",
+                "inverse-primary": "#ffb690",
+                "on-primary-fixed": "#341100",
+                "surface-tint": "#9d4300",
+                "on-surface-variant": "#584237",
+                "outline-variant": "#e0c0b1",
+                "surface-container": "#f0ede9",
+                "inverse-on-surface": "#f3f0eb",
+                "primary-container": "#f97316",
+                "on-tertiary-fixed-variant": "#534600",
+                "surface-dim": "#dcdad5",
+                "primary-fixed": "#ffdbca",
+                "on-secondary-fixed-variant": "#653d1e",
+                "on-primary": "#ffffff",
+                "tertiary-fixed": "#f9e287",
+                "secondary-fixed": "#ffdcc5",
+                "surface-container-high": "#ebe8e3",
+                "secondary-fixed-dim": "#f4bb92",
+                "on-surface": "#1c1c19",
+                "background": "#fcf9f4",
+                "surface-variant": "#e5e2dd",
+                "inverse-surface": "#31302d",
+                "tertiary-container": "#bfab56"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "xs": "4px",
+                "md": "24px",
+                "sm": "12px",
+                "margin-desktop": "64px",
+                "lg": "48px",
+                "base": "8px",
+                "xl": "80px",
+                "margin-mobile": "16px",
+                "gutter": "20px",
+                "container-margin": "20px"
+              },
+              "fontFamily": {
+                "body-md": ["Noto Sans"],
+                "headline-lg-mobile": ["Epilogue"],
+                "headline-xl": ["Epilogue"],
+                "body-lg": ["Noto Sans"],
+                "headline-lg": ["Epilogue"],
+                "label-md": ["Epilogue"],
+                "caption": ["Noto Sans"]
+              },
+              "fontSize": {
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .genre-chip.active {
+            background-color: #9d4300;
+            color: #ffffff;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(157, 67, 0, 0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e0c0b1;
+            border-radius: 10px;
+        }
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #9d430033;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- Top Navigation Header -->
+<header class="w-full sticky top-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm shadow-primary/5">
+<div class="flex items-center justify-between px-container-margin py-xs w-full max-w-7xl mx-auto h-16">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">BookStep</span>
+</div>
+<div class="w-10"></div> <!-- Spacer for symmetry -->
+</div>
+</header>
+<main class="flex-grow w-full max-w-xl mx-auto px-container-margin py-lg flex flex-col gap-xl">
+<!-- Welcome Section -->
+<section class="flex flex-col gap-xs">
+<h1 class="font-headline-xl text-headline-xl text-on-surface">ëìë¡ ììíë ì±ì¥</h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg">ê³ì ì ë§ë¤ê³  ì¢ìíë ì¥ë¥´ë¥¼ ìë ¤ì£¼ì¸ì.</p>
+</section>
+<!-- Form Section -->
+<form class="flex flex-col gap-lg" id="signup-form" onsubmit="return false;">
+<!-- Credentials Card -->
+<div class="bg-surface-container-lowest p-lg rounded-xl shadow-[0_4px_12px_rgba(157,67,0,0.04)] border border-outline-variant/30 flex flex-col gap-md">
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface-variant px-1" for="email">íêµ ì´ë©ì¼</label>
+<input class="h-14 w-full bg-surface-bright border border-outline-variant rounded-xl px-md focus:border-primary focus:ring-0 transition-all placeholder:text-outline/60 font-body-md text-body-md" id="email" placeholder="you@student.edu" type="email"/>
+</div>
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface-variant px-1" for="password">ë¹ë°ë²í¸</label>
+<div class="relative">
+<input class="h-14 w-full bg-surface-bright border border-outline-variant rounded-xl px-md focus:border-primary focus:ring-0 transition-all placeholder:text-outline/60 font-body-md text-body-md" id="password" placeholder="ìµì 8ì ì´ì" type="password"/>
+<button class="absolute right-md top-1/2 -translate-y-1/2 text-outline hover:text-primary" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface-variant px-1" for="confirm-password">ë¹ë°ë²í¸ íì¸</label>
+<input class="h-14 w-full bg-surface-bright border border-outline-variant rounded-xl px-md focus:border-primary focus:ring-0 transition-all placeholder:text-outline/60 font-body-md text-body-md" id="confirm-password" placeholder="ë¹ë°ë²í¸ë¥¼ ë¤ì ìë ¥í´ì£¼ì¸ì" type="password"/>
+</div>
+</div>
+<!-- Interest Genre Section -->
+<div class="flex flex-col gap-md">
+<div class="flex items-end justify-between px-1">
+<h2 class="font-headline-md text-headline-md text-on-surface">ê´ì¬ ì¥ë¥´ ì í</h2>
+<span class="font-label-md text-label-md text-primary">3ê° ì´ì ì íí´ì£¼ì¸ì</span>
+</div>
+<!-- Genre Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-sm" id="genre-container">
+<button class="genre-chip flex items-center justify-between p-md bg-secondary-fixed/30 border border-transparent text-on-surface-variant rounded-xl hover:bg-secondary-fixed/50 transition-all active:scale-95 text-left" onclick="toggleGenre(this)" type="button">
+<span class="font-label-md text-label-md">ìì¤</span>
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+</button>
+<button class="genre-chip flex items-center justify-between p-md bg-secondary-fixed/30 border border-transparent text-on-surface-variant rounded-xl hover:bg-secondary-fixed/50 transition-all active:scale-95 text-left" onclick="toggleGenre(this)" type="button">
+<span class="font-label-md text-label-md">ì/ìì¸ì´</span>
+<span class="material-symbols-outlined text-[20px]">features</span>
+</button>
+<button class="genre-chip flex items-center justify-between p-md bg-secondary-fixed/30 border border-transparent text-on-surface-variant rounded-xl hover:bg-secondary-fixed/50 transition-all active:scale-95 text-left" onclick="toggleGenre(this)" type="button">
+<span class="font-label-md text-label-md">ìí</span>
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+</button>
+<button class="genre-chip flex items-center justify-between p-md bg-secondary-fixed/30 border border-transparent text-on-surface-variant rounded-xl hover:bg-secondary-fixed/50 transition-all active:scale-95 text-left" onclick="toggleGenre(this)" type="button">
+<span class="font-label-md text-label-md">ííì§</span>
+<span class="material-symbols-outlined text-[20px]">castle</span>
+</button>
+<button class="genre-chip flex items-center justify-between p-md bg-secondary-fixed/30 border border-transparent text-on-surface-variant rounded-xl hover:bg-secondary-fixed/50 transition-all active:scale-95 text-left" onclick="toggleGenre(this)" type="button">
+<span class="font-label-md text-label-md">ê³¼í</span>
+<span class="material-symbols-outlined text-[20px]">biotech</span>
+</button>
+<button class="genre-chip flex items-center justify-between p-md bg-secondary-fixed/30 border border-transparent text-on-surface-variant rounded-xl hover:bg-secondary-fixed/50 transition-all active:scale-95 text-left" onclick="toggleGenre(this)" type="button">
+<span class="font-label-md text-label-md">ìì </span>
+<span class="material-symbols-outlined text-[20px]">palette</span>
+</button>
+</div>
+</div>
+</form>
+<!-- Illustration Banner -->
+<div class="relative w-full h-48 rounded-xl overflow-hidden mt-xl">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A modern, vibrant digital illustration of a diverse group of teenagers sitting together in a sunlit, contemporary school lounge. One is reading a tablet, another a physical book, and they look inspired and happy. The style is clean, minimal, and sophisticated with pops of energetic blue and soft green highlights. Bright, high-key lighting creates a welcoming, mentorship-focused atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0JMWrcL10uqEaIDd9da-7mX8YSVLBtDsPJmegKgmP-aQNS3A6ZtOwcs4aJvNAUn6fP5lhq9dRXtRyxzL77mp0ebav0loNvNOHPuDDxoqgdUf0f1KxKOAUF_AkxuYqd-aQ36U0VVIjyQ7A61JZ5fJAH_fgRC22Cn2Qb9_Gix83UcLTjQhTFOeUdtNEfmSyVi5anSQhqsQnqZmAM5YFZY15EY1j63Ldt7alhviCsicAOxooeY6AXZXeupzV4rcpNW-BOXuo_cDvMZY')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex items-end p-lg">
+<p class="text-on-primary font-headline-md text-headline-md drop-shadow-md">ë¹ì ì ì ì¬ë ¥ì ê¹¨ì°ì¸ì</p>
+</div>
+</div>
+<!-- Spacer for Bottom FAB -->
+<div class="h-24"></div>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 right-0 p-container-margin bg-gradient-to-t from-surface via-surface/95 to-transparent md:bg-transparent md:relative md:p-0 md:mb-xl flex justify-center z-50">
+<button class="w-full max-w-xl h-14 bg-primary text-on-primary rounded-xl font-title-lg text-title-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-all active:scale-[0.98] flex items-center justify-center gap-sm" form="signup-form" type="submit">
+<span>ê°ì ìë£íê¸°</span>
+<span class="material-symbols-outlined">trending_up</span>
+</button>
+</div>
+<script>
+        function toggleGenre(button) {
+            button.classList.toggle('active');
+            
+            // Interaction feedback
+            const icon = button.querySelector('.material-symbols-outlined');
+            if (button.classList.contains('active')) {
+                icon.style.fontVariationSettings = "'FILL' 1";
+            } else {
+                icon.style.fontVariationSettings = "'FILL' 0";
+            }
+        }
+
+        // Illustration hover effect
+        const banner = document.querySelector('.relative.w-full.h-48');
+        if(banner) {
+            banner.addEventListener('mousemove', (e) => {
+                const { left, top, width, height } = banner.getBoundingClientRect();
+                const x = (e.clientX - left) / width - 0.5;
+                const y = (e.clientY - top) / height - 0.5;
+                banner.querySelector('div').style.transform = `scale(1.1) translate(${x * 10}px, ${y * 10}px)`;
+            });
+            banner.addEventListener('mouseleave', () => {
+                banner.querySelector('div').style.transform = `scale(1) translate(0, 0)`;
+            });
+            banner.querySelector('div').style.transition = 'transform 0.2s ease-out';
+        }
+    </script>
+</body></html>

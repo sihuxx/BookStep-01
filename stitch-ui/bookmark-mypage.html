@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>BookStep - íë¡í &amp; ë¶ë§í¬</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#ffb690",
+                    "error": "#ba1a1a",
+                    "on-background": "#1c1c19",
+                    "primary": "#9d4300",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#805533",
+                    "outline": "#8c7164",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#783200",
+                    "on-tertiary-fixed": "#221b00",
+                    "tertiary": "#6e5e0d",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#301400",
+                    "on-secondary-container": "#794e2e",
+                    "tertiary-fixed-dim": "#dcc66e",
+                    "surface-bright": "#fcf9f4",
+                    "on-primary-container": "#582200",
+                    "surface": "#fcf9f4",
+                    "on-tertiary-container": "#4b3f00",
+                    "surface-container-low": "#f6f3ee",
+                    "surface-container-highest": "#e5e2dd",
+                    "secondary-container": "#fdc39a",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#ffb690",
+                    "on-primary-fixed": "#341100",
+                    "surface-tint": "#9d4300",
+                    "on-surface-variant": "#584237",
+                    "outline-variant": "#e0c0b1",
+                    "surface-container": "#f0ede9",
+                    "inverse-on-surface": "#f3f0eb",
+                    "primary-container": "#f97316",
+                    "on-tertiary-fixed-variant": "#534600",
+                    "surface-dim": "#dcdad5",
+                    "primary-fixed": "#ffdbca",
+                    "on-secondary-fixed-variant": "#653d1e",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#f9e287",
+                    "secondary-fixed": "#ffdcc5",
+                    "surface-container-high": "#ebe8e3",
+                    "secondary-fixed-dim": "#f4bb92",
+                    "on-surface": "#1c1c19",
+                    "background": "#fcf9f4",
+                    "surface-variant": "#e5e2dd",
+                    "inverse-surface": "#31302d",
+                    "tertiary-container": "#bfab56"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "margin-desktop": "64px",
+                    "lg": "48px",
+                    "base": "8px",
+                    "xl": "80px",
+                    "margin-mobile": "16px",
+                    "gutter": "20px"
+            },
+            "fontFamily": {
+                    "body-md": ["Noto Sans KR"],
+                    "headline-lg-mobile": ["Epilogue"],
+                    "headline-xl": ["Epilogue"],
+                    "body-lg": ["Noto Sans KR"],
+                    "headline-lg": ["Epilogue"],
+                    "label-md": ["Epilogue"],
+                    "caption": ["Noto Sans KR"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf9f4;
+            color: #1c1c19;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .step-up-shadow {
+            box-shadow: 0 4px 12px rgba(157, 67, 0, 0.08);
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-body-md text-body-md pb-24">
+<!-- Top AppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center justify-between px-margin-mobile py-xs w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<button class="active:scale-95 transition-transform p-xs rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">BookStep</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed shadow-sm">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2bK-qj2RI8ObyHY7RPAnbkz2uZnWhO38mecfbXjb8TWPl5kJnM8_Iq-bEzg1nWBnPxNfk4RpCrLxxsLoVmlmElcp_Ccnn9PYtQshms4_dW5bt4J6DeTKscGug64rfo2Gzdi0MYHt6vu0K5AUkFg-VjgGUOrSofP-x1XbVnH4Sr2GuQNSokp1zLcfFEA1dsYW-8oip4hTsSUSdQKoAw3-WglyWyaePmAr9m1fW9-VgkRPrUxsS3BYWz3-l95DhIuni645RcRwuuBQ"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile pt-lg space-y-xl">
+<!-- User Profile Header Section -->
+<section class="relative overflow-hidden rounded-3xl bg-primary-container p-lg text-on-primary-container step-up-shadow">
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-lg">
+<div class="relative">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white/30 p-1">
+<img alt="User Headshot" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv8IUqSWf-OUc2sveYZyKexHJSrEJ87o5VblBQKENVnJgOYqml48smnoFVYSJh5JCwXY5DWJ2iMeJtFreCs7NqS6Wj0T0BOzUtXxOuSlq5bynUucv6s4SgaZYLD5eykBbc9bayacOqElHqAstdfbD-SsXLnxKTED_CH-h_5mwAKMhSqSctYvGL3bHBzmeAVMnseh9z0NJDDtL0YyC-tkT5OUVYZ6X9kLtTBYncGlddn89m4Xf-KTTtdY0mGGoV7M9w-LlwE3n4_ZA"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary text-white px-xs py-1 rounded-full text-[12px] font-bold flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+                        Step 12
+                    </div>
+</div>
+<div class="text-center md:text-left flex-1">
+<h2 class="font-headline-lg-mobile md:text-headline-lg mb-xs">íìí©ëë¤, ìë ì¤ë!</h2>
+<p class="font-body-md text-white/90 mb-md">ì´ë² ë¬ì 4ê¶ì ì±ì ì½ì¼ì¨ë¤ì. 'íë¡ ëìê°'ê¹ì§ 2ê¶ ë¨ììµëë¤.</p>
+<div class="w-full bg-white/20 h-2 rounded-full overflow-hidden mb-1">
+<div class="h-full bg-secondary-fixed w-[75%] rounded-full shadow-[0_0_8px_rgba(255,220,197,0.5)]"></div>
+</div>
+<div class="flex justify-between text-[12px] font-medium text-white/80">
+<span>íì¬: ì±ë²ë </span>
+<span>ë¤ì: íë¡ ëìê°</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Profile/Bookmarks Tabs -->
+<div class="flex gap-md border-b border-outline-variant/30">
+<button class="px-md py-sm font-bold text-lg border-b-4 border-primary text-primary transition-all">ë´ ì ë³´</button>
+<button class="px-md py-sm font-bold text-lg text-on-surface-variant hover:text-primary transition-all">ë¶ë§í¬</button>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- My Bookmarks Section -->
+<section class="md:col-span-8 space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-bold text-xl">ë´ê° ì°í ëì</h3>
+<button class="text-primary font-medium text-sm flex items-center gap-xs hover:underline">
+                        ì ì²´ë³´ê¸° <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-md">
+<!-- Book Card 1 -->
+<div class="group flex flex-col gap-xs transition-transform active:scale-95">
+<div class="relative aspect-[2/3] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img alt="Book Cover 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhBDFnFSFTA6OUulJATar4dWVyeN54q0KN5aI1HgTtyT0KngvY7bVrr10Jx8XTZS9zjXOzKiE04sxpGwlLDRkxyTMMFevhSsha60KlH9swRZXzuaVdKRWQXfo9CYNfh6OFOINU9uV47B6FCu3hnwW672Jtkc6jclW1M6ugjyrdlbFWVsJyuBBT5_lrrcGLCa2w5CZa55v7GjfYHHxqiVcrhKY0set3vPlUkLWW5fBTMumrjEdyddG12Zkeozzeq3pLmbXA8E63ZRs"/>
+<span class="absolute top-xs right-xs bg-secondary-container text-on-secondary-container px-xs py-1 rounded-lg text-[10px] font-bold shadow-sm">ëì¶ ê°ë¥</span>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-sm">
+<button class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-white text-error flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+</div>
+<h4 class="font-bold text-[16px] truncate mt-2">ë³ë¤ì ì¬ì </h4>
+<p class="text-sm text-on-surface-variant">J.K. ì¼íë¬</p>
+</div>
+<!-- Book Card 2 -->
+<div class="group flex flex-col gap-xs transition-transform active:scale-95">
+<div class="relative aspect-[2/3] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img alt="Book Cover 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUp6ia9q_VDcC6BBVo6ZYiAYBfA19m63bl3XBn_OsY98-jbDbpS0BFYYvnx7iPENWVR3fIipKFGstJKzlqdleioUAPjPaJ6j2sb8WFVWSTlevXIQs0kH7R83rfAgYDI1eQe33-C3zjDGc_AvNEtvachPTNS8iAdOM8MiHIcQZGDI6fs44ZP1CawK5DwlckS7ln8IhYcbc9jrDTj4JSOhIM2XxDvt8PXd-zXbDKr8u7pJlTYO0sUQ4FJDGNyAyDyVOELXVm9eplBgs"/>
+<span class="absolute top-xs right-xs bg-tertiary-fixed text-on-tertiary-fixed-variant px-xs py-1 rounded-lg text-[10px] font-bold shadow-sm">ìì½ë¨</span>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-sm">
+<button class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-white text-error flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+</div>
+<h4 class="font-bold text-[16px] truncate mt-2">ìì­ì´ë ê·¸ë¦¼ì</h4>
+<p class="text-sm text-on-surface-variant">ì¬ë¼ ì</p>
+</div>
+<!-- Book Card 3 -->
+<div class="group hidden sm:flex flex-col gap-xs transition-transform active:scale-95">
+<div class="relative aspect-[2/3] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img alt="Book Cover 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIzrPj-cDkVI5jfLoBNcU0nyRomFeFDUUPiPVWXdY5DywY75YieHgGkG9L8K9jNQJnNBzpZgxpOguW6mCpLRweHwQFaUyt29jl4anjbbO6uKS1WpldN2au9Rj2uFQNk9jsFmEQPQCRQPzsOjFrTTugtDlHC9aHBCstRnsxw4j2cdThWn4pJRwip8AKYCk76AK8UeCMMDOlidZgbTXJIV0BFlT0viP1MZMZrZeYZOQmnMe4X4nNHhNrEZt9qrcWSgk-6CGYjFrq8bI"/>
+<span class="absolute top-xs right-xs bg-secondary-container text-on-secondary-container px-xs py-1 rounded-lg text-[10px] font-bold shadow-sm">ëì¶ ê°ë¥</span>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-sm">
+<button class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-white text-error flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+</div>
+<h4 class="font-bold text-[16px] truncate mt-2">ë§ìì ì±ì¥</h4>
+<p class="text-sm text-on-surface-variant">ë ì¤ ë¦¬ë²ì¤</p>
+</div>
+</div>
+</section>
+<!-- Sidebar Column -->
+<aside class="md:col-span-4 space-y-xl">
+<!-- Current Loans -->
+<div class="bg-surface-container-low p-lg rounded-3xl space-y-md border border-outline-variant/20">
+<h3 class="font-bold text-xl flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="book">book</span>
+                        ëì¶ ì¤ì¸ ëì
+                    </h3>
+<div class="space-y-sm">
+<!-- Loan Item 1 -->
+<div class="flex items-center gap-md p-sm bg-white rounded-xl shadow-sm border border-primary/5">
+<div class="w-12 h-16 rounded-md overflow-hidden bg-surface-variant shrink-0">
+<img alt="Loan 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLWwxUqbVcPfAdENm3POA2YwBcleTvA0HK8YnVy3KEd-I4zSsKE1eLtEybu4RwLnx1g2CWSvBhEu5G0o2wviOOiuUQyOs-kb3ne3ybripC3mon0CWDt5hU_FFebjn5Hw97JAsZGYtT5m_qqeEsaH-sSWSmlvQSut-4vzQzo5Qi8WSTgYSbZfP6NMouYVceX0kwsya7HbP-3qrZC6IMgQBE72VdpDnsHn39KV4BIoEu6ZCmhI2tZ6AvzEPSavLH2dvqxjmAkH52pYQ"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-medium text-on-surface truncate">ì¬ë¦ ë¤í</p>
+<p class="text-[12px] text-error font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                                    2ì¼ í ë°ë©
+                                </p>
+</div>
+<button class="text-primary p-xs hover:bg-secondary-fixed/30 rounded-full">
+<span class="material-symbols-outlined" data-icon="keyboard_return">keyboard_return</span>
+</button>
+</div>
+<!-- Loan Item 2 -->
+<div class="flex items-center gap-md p-sm bg-white rounded-xl shadow-sm border border-primary/5">
+<div class="w-12 h-16 rounded-md overflow-hidden bg-surface-variant shrink-0">
+<img alt="Loan 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOXcbahkNMFaMXy2Y25slr_hUNa5OWV_SF_N2oa0mePSSY8YOe96amoZiM3wRTMd58SPjNnD-XxmUSX6vxTYyxq4Px4Ri-eDEfYkn180WNtiQwQhG-fUdS0HO7VdRIJoi25T1X20ZkI95n2o8Zn1rJKNX4CIMPmK-qhbEoiGsyQFQtoRgbiIB8URh_a1i1i_4f-JtoRpmN4Mcuv2wWwz8Tiyftvbom1wIr-0B2icLo__g0O0rPxtYqmIk6nGmSV1qarjEUt38m7c4"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-medium text-on-surface truncate">ìê³ ë¦¬ì¦</p>
+<p class="text-[12px] text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="event">event</span>
+                                    11ì 24ì¼ ë°ë©
+                                </p>
+</div>
+<button class="text-primary p-xs hover:bg-secondary-fixed/30 rounded-full">
+<span class="material-symbols-outlined" data-icon="keyboard_return">keyboard_return</span>
+</button>
+</div>
+</div>
+<button class="w-full py-sm rounded-xl bg-secondary-fixed/20 text-primary font-bold hover:bg-primary hover:text-white transition-colors">
+                        ëì ê¸°ë¡ ë³´ê¸°
+                    </button>
+</div>
+<!-- Settings -->
+<div class="space-y-sm">
+<h3 class="font-bold text-xl px-xs">ì¤ì </h3>
+<div class="flex flex-col gap-xs">
+<button class="w-full flex items-center justify-between p-md bg-white rounded-2xl hover:bg-surface-container-high transition-colors text-left border border-outline-variant/10 shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/30 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="interests">interests</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">ê´ì¬ ì¥ë¥´ ìì </p>
+<p class="text-[12px] text-on-surface-variant">ëì ì·¨í¥ì ë¤ì ì¤ì í´ë³´ì¸ì</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-md bg-white rounded-2xl hover:bg-surface-container-high transition-colors text-left border border-outline-variant/10 shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/30 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">ìë¦¼ ì¤ì </p>
+<p class="text-[12px] text-on-surface-variant">ë°ë© ìë¦¼ì ê´ë¦¬íì¸ì</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center gap-md p-md bg-error-container/20 rounded-2xl text-error hover:bg-error/10 transition-colors text-left mt-md group">
+<div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center group-hover:bg-error/20">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</div>
+<span class="font-bold">ë¡ê·¸ìì</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest border-t border-outline-variant shadow-[0_-4px_12px_rgba(157,67,0,0.08)]">
+<div class="flex justify-around items-center h-16 px-4 pb-safe w-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-bold">í</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-[10px] font-bold">ê²ì</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="text-[10px] font-bold">ë¶ë§í¬</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary relative after:content-[''] after:w-1 after:h-1 after:bg-primary after:rounded-full after:mt-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[10px] font-bold">íë¡í</span>
+</a>
+</div>
+</nav>
+<script>
+        document.querySelectorAll('button[class*="text-lg"]').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('button[class*="text-lg"]').forEach(t => {
+                    t.classList.remove('border-b-4', 'border-primary', 'text-primary');
+                    t.classList.add('text-on-surface-variant');
+                });
+                this.classList.add('border-b-4', 'border-primary', 'text-primary');
+                this.classList.remove('text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>
